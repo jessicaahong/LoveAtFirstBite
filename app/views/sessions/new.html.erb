@@ -1,0 +1,15 @@
+<h2>SiteName</h2>
+<h3>LOGIN</h3>
+<%= form_for @user, url: "/sessions", method:"post" do |f| %>
+  <div class="form-group"> 	
+  	<span>Email</span>
+  	<br>
+    <%= f.text_field :email, required: true %>
+  </div>
+  <div class="form-group">
+  	<span>Password</span>
+  	<br>
+    <%= f.password_field :password, required: true %>
+  </div>
+  <%= f.submit "LOGIN" %>
+<% end %> 

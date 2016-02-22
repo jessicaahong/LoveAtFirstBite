@@ -1,0 +1,25 @@
+<h2>SiteName</h2>
+<h3>SIGN UP</h3>
+<%= form_for @user do |f| %>
+  <div class="form-group">
+  	<span>Username</span>
+  	<br>
+    <%= f.text_field :username, required: true %>
+  </div>
+  <div class="form-group"> 	
+  	<span>Email</span>
+  	<br>
+    <%= f.text_field :email, required: true %>
+  </div>
+  <div class="form-group">
+  	<span>Password</span>
+  	<br>
+    <%= f.password_field :password, required: true %>
+  </div>
+  <div class="form-group">
+   	<span>Password Confirmation</span>
+  	<br>
+	<%= f.password_field :password, required: true %>
+  </div>
+  <%= f.submit "SIGN UP" %>
+<% end %> 
