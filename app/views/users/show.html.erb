@@ -1,3 +1,6 @@
 <div>
-	Welcome, <%= @user.username %>
+	<% if current_user %>
+		Welcome, <%= @user.username %>
+		<%= image_tag(current_user.avatar.url(:medium)) %>
+	<% end %>
 </div>
