@@ -16,9 +16,10 @@
     	<br>
     <%= f.file_field :avatar %>
     </div>
-    <%= f.submit "Edit My Profile" %>
+    <%= f.submit "Save Changes to Profile" %>
   <% end %>
 
-  <h3>Click here to delete your account:</h3>
-  <%= button_to "Delete", "/users/#{@user.id}", method: :delete %>
+  <h3>Click to delete your account</h3>
+  <p class="instructional-text" style="color: red">Warning! Clicking this button will permanently erase your profile and all of your listings.</p>
+  <%= button_to "Delete", "/users/#{@user.id}", method: :delete, data: {confirm: 'Are you sure you want to delete your account?', disable_with: "loading..."} %>
 <% end %>

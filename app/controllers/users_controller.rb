@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :require_login, :except => [:new, :create]
+before_action :require_login, only: [:index, :show, :edit, :update, :destroy]
 
 	def index
 		@users = User.all
@@ -7,11 +7,13 @@ before_action :require_login, :except => [:new, :create]
 	end
 
 	def new
-		@user = User.new
+		current_user
+		logged_in?
 		if (@logged_in == false)
+			@user = User.new
 			render :new
 		else
-			redirect_to "/"
+			redirect_to "/users/#{@current_user.id}"
 		end
 	end
 
@@ -29,7 +31,7 @@ before_action :require_login, :except => [:new, :create]
 	def edit
 		@user = User.find(params[:id])
 		authorize
-			if @right_person
+			if (@right_person)
 				render :edit
 			else
 				redirect_to "/"
