@@ -1,6 +1,10 @@
+<%= button_to "Logout", "/sessions", method: "delete" %>
 <div>
-	<% if current_user %>
-		Welcome, <%= @user.username %>
-		<%= image_tag(current_user.avatar.url(:medium)) %>
+		<%= image_tag(@user.avatar.url(:medium)) %>
+		<h2><%= @user.username %></h2>
+		<h3>View <%= @user.username %>'s listings:</h3>
+	<% if current_user == @user %>
+	this is a test!
+	<%= button_to "Edit Profile", edit_user_path(@user), method: "get" %>
 	<% end %>
 </div>

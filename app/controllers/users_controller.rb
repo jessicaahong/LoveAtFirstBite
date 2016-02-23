@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+before_action :require_login, :except => [:new, :create]
 
 	def index
 		@users = User.all
@@ -7,7 +8,11 @@ class UsersController < ApplicationController
 
 	def new
 		@user = User.new
-		render :new
+		if (@logged_in == false)
+			render :new
+		else
+			redirect_to "/"
+		end
 	end
 
 	def create
@@ -23,9 +28,26 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find(params[:id])
-		render :edit
+		authorize
+			if @right_person
+				render :edit
+			else
+				redirect_to "/"
+			end
 	end
 
+	def update
+		user = User.find(params[:id])
+		user.update_attributes(user_params)
+		redirect_to user
+	end
+
+	def destroy
+		user = User.find(params[:id])
+		logout
+		user.destroy
+		redirect_to "/"
+	end
 
 private
 	def user_params

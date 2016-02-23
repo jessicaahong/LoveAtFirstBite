@@ -1,0 +1,24 @@
+<% if current_user %>
+  <h2>Edit your profile details</h2>
+  <%= form_for @user do |f| %>
+    <div class="form-group">
+    	<span>Username</span>
+    	<br>
+      <%= f.text_field :username, required: true %>
+    </div>
+    <div class="form-group"> 	
+    	<span>Email</span>
+    	<br>
+      <%= f.text_field :email, required: true %>
+    </div>
+    <div class="form-group">
+     	<span>Upload a Custom Avatar (optional)</span>
+    	<br>
+    <%= f.file_field :avatar %>
+    </div>
+    <%= f.submit "Edit My Profile" %>
+  <% end %>
+
+  <h3>Click here to delete your account:</h3>
+  <%= button_to "Delete", "/users/#{@user.id}", method: :delete %>
+<% end %>
