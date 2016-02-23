@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
 
+
   private
   	def require_login
 		if !current_user

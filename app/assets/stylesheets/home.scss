@@ -4,7 +4,8 @@
 
 @import "partials/variables";
 
-nav ul {
+.navbar {
+ul {
 	background: gray;
 	color: black;
 	padding: 10px 10px;
@@ -13,6 +14,7 @@ nav ul {
 	list-style: none;
 	position: relative;
 	display: inline-table;	
+}
 }
 h1 {
 	color: $light_gray;

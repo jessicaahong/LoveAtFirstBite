@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
-layout "loggedout"	
 
 	def show
+		@current_user
+		@logged_in
 		render template: "home/#{params[:page]}"
 	end
 end

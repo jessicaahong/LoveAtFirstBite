@@ -1,24 +1,16 @@
-<nav>
+<nav class="navbar">
 	<ul>
-		<li><a href="/">SiteName</a></li>
-		<li><a href="#">About</a>
+		<li><%= link_to "SiteName", "/", method: "get" %></li>
+		<li><%= link_to "About", "/home/about", method: "get" %></li>
+		<li><%= link_to "FAQ", "/home/faq", method: "get" %></li>
+		<li><%= link_to "Browse Produce Listings", "#", method: "get" %></li>		
+		<li><a href="#">My Profile</a>
 			<ul>
-				<li><a href="#">Photoshop</a></li>
-				<li><a href="#">Illustrator</a></li>
-				<li><a href="#">Web Design</a>
-					<ul>
-						<li><a href="#">HTML</a></li>
-						<li><a href="#">CSS</a></li>
-					</ul>
-				</li>
+				<li><%= link_to "View My Profile", "/users/#{@current_user.id}", method: "get" %></li>
+				<li><%= link_to "Manage My Listings", "#", method: "get" %></li>
+				<li><%= link_to "Edit My Profile", "/users/#{@current_user.id}/edit", method: "get" %></li>
 			</ul>
 		</li>
-		<li><a href="#">Articles</a>
-			<ul>
-				<li><a href="#">Web Design</a></li>
-				<li><a href="#">User Experience</a></li>
-			</ul>
-		</li>
-		<li><a href="#">Inspiration</a></li>
+		<li><%= link_to "Sign Out", "/sessions", method: "delete" %></li>
 	</ul>
 </nav>
