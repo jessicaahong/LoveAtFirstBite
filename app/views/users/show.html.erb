@@ -4,6 +4,7 @@
 	<p class="profile-details-text"><%= @user.email %></p>
 	<% if current_user == @user %>
 		<%= button_to "Edit My Profile", edit_user_path(@user), method: "get" %>
+		<%= button_to "Manage My Listings", "/listings/mylistings", method: "get" %>
 	<% end %>
 </div>
 	<div class="listings-details">
@@ -14,7 +15,7 @@
 					<%= link_to image_tag(listing.avatar.url(:medium)), "/listings/#{listing.id}" %>
 				</div>
 			<div class="listing-details-text">
-				<%= link_to listing.title, "/listings/#{listing.id}", class: "listing-dedails-text" %></h3>
+				<h3><%= link_to listing.title, "/listings/#{listing.id}", class: "listing-details-text" %></h3>
 				<p class="listing-details-text">Listing created <%= listing.created_at %></p>
 				<p class="listing-details-text"><%= listing.quantity %></p>
 				<p class="listing-details-text"><%= listing.description %></p>

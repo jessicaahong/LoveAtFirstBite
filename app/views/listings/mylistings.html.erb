@@ -1,1 +1,17 @@
-testing123
+	<%= button_to "Add New Listing", "/listings/new", method: "get" %>
+
+<% @current_user.listings.each do |listing| %>
+	<div class="mylistings-listing-details">
+		<div class="mylistings-listing-image">
+			<%= image_tag(listing.avatar.url(:medium)) %>
+		</div>
+
+		<div class="mylistings-listing-details-text-content">
+			<h3><%= link_to listing.title, "/listings/#{listing.id}", class: "listing-details-text" %></h3>
+			<p class="mylistings-listing-details-text">Listing created <%= listing.created_at %></p>
+			<p class="mylistings-listing-details-text"><%= listing.quantity %></p>
+			<p class="mylistings-listing-details-text"><%= listing.description %></p>
+		</div>
+	<%= button_to "Edit Listing", "/listings/#{listing.id}/edit", method: "get" %>
+	</div>
+<% end %>

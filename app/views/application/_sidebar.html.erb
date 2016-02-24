@@ -1,0 +1,12 @@
+<div class="sidebar">
+<%= form_for @listings do |f| %>
+	<div class="sidebar-search-by-city">
+		<p class="instructional-text">Search by Category</p>
+		
+	</div>
+	<div class="sidebar-search-by-category">	
+		<p class="instructional-text">Search by Category</p>
+		<%= f.select :category, Listing.categories.keys.to_a %>
+	</div>
+<% end %>
+</div>

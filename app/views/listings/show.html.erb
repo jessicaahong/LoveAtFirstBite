@@ -32,6 +32,19 @@
 </div>
 
 <div class="listing-contact-owner">
-	<div class="listing-button"><%= button_to "Email Owner" %></div>
-	<div class="listing-button"><%= button_to "See Owner's Other Listings", "/users/#{@listing.user.id.to_s}", method: "get" %></div>
+	<% if @current_user == @listing.user %>
+		<div class="listing-button">
+			<%= button_to "Edit Listing", "/listings/#{@listing.id}/edit", method: "get" %>
+		</div>
+		<div class="listing-button">
+			<%= button_to "Delete Listing", "/listings", method: "delete" %>
+		</div>
+	<% else %>
+		<div class="listing-button">
+			<%= button_to "Email Owner" %>
+		</div>
+		<div class="listing-button">
+			<%= button_to "See Owner's Other Listings", "/users/#{@listing.user.id.to_s}", method: "get" %>
+		</div>
+	<% end %>
 </div>

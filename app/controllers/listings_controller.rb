@@ -10,7 +10,7 @@ before_action :require_login
 		@listing = Listing.all
 		render :mylistings
 	end
-	
+
 	def new
 		@listing = Listing.new
 		render :new
@@ -21,8 +21,6 @@ before_action :require_login
 		redirect_to "/listings/#{@listing.id}"
 	end
 
-
-
 	def show
 		@listing = Listing.find(params[:id])
 		render :show
@@ -30,11 +28,10 @@ before_action :require_login
 
 	def edit
 		@listing = Listing.find(params[:id])
-		authorize
-			if (@right_person)
-				render :edit
-			else
-				redirect_to "/"
+		if (@current_user == @listing.user)
+			render :edit
+		else
+			redirect_to "/"
 			end
 	end
 
@@ -50,6 +47,9 @@ before_action :require_login
 		redirect_to "/listings"
 	end
 
+	def search
+		render :search
+	end
 
 private
 	def listing_params
