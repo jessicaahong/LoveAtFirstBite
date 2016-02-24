@@ -1,10 +1,27 @@
-<%= button_to "Logout", "/sessions", method: "delete" %>
-<div>
-		<%= image_tag(@user.avatar.url(:medium)) %>
-		<h2><%= @user.username %></h2>
-		<h3>View <%= @user.username %>'s listings:</h3>
+<div class="profile_details">
+	<div class="profile_pic"><%= image_tag(@user.avatar.url(:medium)) %></div>
+	<h2><%= @user.username %></h2>
+	<p class="profile-details-text"><%= @user.email %></p>
 	<% if current_user == @user %>
-	this is a test!
-	<%= button_to "Edit Profile", edit_user_path(@user), method: "get" %>
+		<%= button_to "Edit My Profile", edit_user_path(@user), method: "get" %>
 	<% end %>
+</div>
+	<div class="listings-details">
+		<% if @user.listings.count > 0 %> 
+			<h3>View <%= @user.username %>'s listings:</h3>
+			<% @user.listings.each do |listing| %>
+				<div class="listing-image">
+					<%= link_to image_tag(listing.avatar.url(:medium)), "/listings/#{listing.id}" %>
+				</div>
+			<div class="listing-details-text">
+				<%= link_to listing.title, "/listings/#{listing.id}", class: "listing-dedails-text" %></h3>
+				<p class="listing-details-text">Listing created <%= listing.created_at %></p>
+				<p class="listing-details-text"><%= listing.quantity %></p>
+				<p class="listing-details-text"><%= listing.description %></p>
+			</div>
+			<% end %>
+		<% else %>
+			<p class="listing-details-text"><%= @user.username %> doesn't have any listings yet!</p>
+		<% end %>
+	</div>
 </div>

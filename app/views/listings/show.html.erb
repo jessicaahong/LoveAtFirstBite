@@ -1,0 +1,37 @@
+
+<div class="showpage-listing-details">
+	<div class="showpage-listing-image">
+		<%= image_tag(@listing.avatar.url(:medium)) %>
+	</div>
+
+	<div class="showpage-listing-details-text-content">
+		<h2 class="showpage-listing-details-text"><%= @listing.title %></h1>
+		<p class="showpage-listing-details-text">Listing created <%= @listing.created_at %></p>
+		<p class="showpage-listing-details-text"><%= @listing.quantity %></p>
+		<p class="showpage-listing-details-text"><%= @listing.description %></p>
+	</div>
+</div>
+<div class="listing-pickup-details">
+	<div class="showpage-owner-image">
+		<%= image_tag(@listing.user.avatar.url(:medium)) %>
+	</div>
+	<p class="showpage-listing-details-text">Owner: <%= @listing.user.username %>
+	<br><%= @listing.user.email %>
+	<br><%= @listing.address_line1 %> 
+	<span><%= @listing.address_line2 %></span>
+	<br><%= @listing.city %>
+	<br><%= @listing.state %>
+	<br><%= @listing.zip %>
+	<br><% if @listing.prefers_email %>
+		<i>Owner prefers email correspondance</i><br>
+		<% end %>
+		<% if @listing.prefers_phone %>
+		<i>Owner prefers phone correspondance</i>
+		<% end %>
+	</p>
+</div>
+
+<div class="listing-contact-owner">
+	<div class="listing-button"><%= button_to "Email Owner" %></div>
+	<div class="listing-button"><%= button_to "See Owner's Other Listings", "/users/#{@listing.user.id.to_s}", method: "get" %></div>
+</div>
