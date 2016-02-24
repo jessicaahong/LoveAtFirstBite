@@ -48,7 +48,14 @@ before_action :require_login
 	end
 
 	def search
-		render :search
+		@listings = Listing.all
+		render layout: "search_listings"
+	end
+
+	def search_query
+		@listings = Listing.find_by
+		send it back as json so i dont have to refresh page
+		format.json { render json @listings}
 	end
 
 private

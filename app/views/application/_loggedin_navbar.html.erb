@@ -1,16 +1,22 @@
-<nav class="navbar">
+<nav class="navbar navbar-full navbar-light bg-faded" role="navigation">
+<div class="container">
+	<%= link_to "SiteName", "/", method: "get", class: "navbar-brand" %>
+	<% if @current_user%>
+		<span>Welcome, <%= @current_user.username %>
+		</span>
+	<% end %>
 	<ul>
-		<li><%= link_to "SiteName", "/", method: "get" %></li>
-		<li><%= link_to "About", "/home/about", method: "get" %></li>
-		<li><%= link_to "FAQ", "/home/faq", method: "get" %></li>
-		<li><%= link_to "Browse Produce Listings", "/listings/search", method: "get" %></li>		
-		<li><%= link_to "My Profile", "/users/#{@current_user.id}", method: "get" %>
+		<li class="nav-item"><%= link_to "About", "/home/about", method: "get", class: "nav-link" %></li>
+		<li class="nav-item"><%= link_to "FAQ", "/home/faq", method: "get", class: "nav-link" %></li>
+		<li class="nav-item"><%= link_to "Browse Produce Listings", "/listings/search", method: "get", class: "nav-link" %></li>		
+		<li class="nav-item"><%= link_to "My Profile", "/users/#{@current_user.id}", method: "get", class: "nav-link" %>
 			<ul>
-				<li><%= link_to "View My Profile", "/users/#{@current_user.id}", method: "get" %></li>
-				<li><%= link_to "Manage My Listings", "/listings/mylistings", method: "get" %></li>
-				<li><%= link_to "Edit My Profile", "/users/#{@current_user.id}/edit", method: "get" %></li>
+				<li class="nav-item"><%= link_to "View My Profile", "/users/#{@current_user.id}", method: "get", class: "nav-link" %></li>
+				<li class="nav-item"><%= link_to "Manage My Listings", "/listings/mylistings", method: "get", class: "nav-link" %></li>
+				<li class="nav-item"><%= link_to "Edit My Profile", "/users/#{@current_user.id}/edit", method: "get", class: "nav-link" %></li>
 			</ul>
 		</li>
-		<li><%= link_to "Sign Out", "/sessions", method: "delete" %></li>
+		<li class="nav-item"><%= link_to "Sign Out", "/sessions", method: "delete", class: "nav-link" %></li>
 	</ul>
+</div>
 </nav>
