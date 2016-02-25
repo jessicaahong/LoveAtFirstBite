@@ -8,5 +8,44 @@ h1 {
 	color: $light_gray;
 }
 
+.header-row-image {
+	width: 100%;
+}
 
- 
+#jumbo-image-div {
+	position: relative;
+	text-align: center;
+	width: 100%;
+
+	#jumbo-image {
+		z-index: 0;
+		width: 50%;
+		-webkit-filter: grayscale(20%); 
+    	filter: grayscale(20%);
+	}
+
+	#homepage-text {
+		width: 100%;
+		position: absolute;
+		top: 30%;
+		color: black;
+		z-index: 2;
+		margin: 0 auto;
+
+		#jumbo-header {
+			color: black;
+			font-size: 50px;
+		}
+
+		#jumbo-subheader {
+			font-size: 35px;
+		}
+		&:hover + #jumbo-image {
+    	-webkit-filter: grayscale(0%); 
+    	filter: grayscale(0%);
+		}
+	}
+
+
+
+}
