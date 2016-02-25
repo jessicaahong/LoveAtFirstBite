@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   get "/home/:page", to: "home#show"
 
-  get "/listings/search", to: "listings#search"
   get "/listings/mylistings", to: "listings#mylistings"
 
   resources :users
@@ -13,7 +12,12 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create"
   delete "/sessions", to: "sessions#destroy"
 
+  
+  post "/listings/searchresults", to: "listings#searchresults"
+
+  get "/search", to: "search#index"
+  get "/show", to: "search#show"
+
   get "*path", to: "home#show", page: "home"
 
-  post "/listings/searchresults", to: "listings#searchresults"
-end
+end 

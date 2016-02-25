@@ -1,8 +1,2 @@
-add event listener for submit button in search sidebar here
-on submit we will grab the values out of the dropdown menus
-this will be the data that we send with the ajax request
-an ajax request with a get request for the call
-{"city": "Oakland",
-"category": "nil"}
-
-query_params['city']
+// Place all the behaviors and hooks related to the matching controller here.
+// All this logic will automatically be available in application.js.
