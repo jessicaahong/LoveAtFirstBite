@@ -1,8 +1,16 @@
-<h1> this is the home page sanity check </h1>
+<div class="jumbotron">
+	<div class="container">
+	  <h1>this is the home page sanity check!</h1>
+	  <p>text goes here...</p>
+	  <% if current_user %>
+		<%= button_to "Browse Produce", "/listings/search", method: "get", class: "btn btn-primary btn-lg" %>
+	<% else %>
+		<%= button_to "Sign Up", "/users/new", method: "get", class: "btn btn-success btn-lg" %>
+	<% end %>
+
+	</div>
+</div>
 
 
-<% if current_user %>
-	<%= button_to "Browse Produce", "/listings/search", method: "get" %>
-<% else %>
-	<%= button_to "Sign Up", "/users/new", method: "get" %>
-<% end %>
+
+

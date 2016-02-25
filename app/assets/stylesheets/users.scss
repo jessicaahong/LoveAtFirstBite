@@ -2,5 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "partials/variables";
 
+.header-text-sm {
+	font-size: 24px;
+}
 
+.instructional-text-lg {
+	font-size: 18px;
+}
+
+.instructional-text-md {
+	font-size: 16px;
+}
+
+.instructional-text-sm {
+	font-size: 14px
+}
+
+.new_user {
+	margin: 0 auto;
+	width: 400px;
+	padding: 10px;
+	text-align: center;
+
+	#user_username {
+		height: 30px;
+		width: 340px;
+		border: 1px, solid;
+	}
+
+	#user_email {
+		color: $light_gray;
+		height: 30px;
+		width: 340px;
+	}
+
+	#user_password {
+		color: red;
+		height: 30px;
+		width: 340px;
+	}
+
+}

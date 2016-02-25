@@ -1,25 +1,28 @@
-<h2>SiteName</h2>
-<h3>SIGN UP</h3>
+<div class="login_form">
+<p class="text-center header-text-sm">SIGN UP</h3>
 <%= form_for @user do |f| %>
   <div class="form-group">
-  	<span>Username</span>
+  	<span class="instructional-text-md">Username</span>
   	<br>
     <%= f.text_field :username, required: true %>
   </div>
   <div class="form-group"> 	
-  	<span>Email</span>
+  	<span class="instructional-text-md">Email</span>
   	<br>
     <%= f.text_field :email, required: true %>
   </div>
   <div class="form-group">
-  	<span>Password</span>
+  	<span class="instructional-text-md">Password</span>
   	<br>
     <%= f.password_field :password, required: true %>
   </div>
   <div class="form-group">
-   	<span>Password Confirmation</span>
+   	<span class="instructional-text-md">Password Confirmation</span>
   	<br>
 	<%= f.password_field :password, required: true %>
   </div>
-  <%= f.submit "SIGN UP" %>
+  <%= f.submit "SIGN UP", class: "btn btn-primary btn-lg" %>
+  <br><br>
+  <p class="instructional-text-sm">Already have an account? <a href="/sign_in">Log in here</a>.</p>
 <% end %> 
+</div>

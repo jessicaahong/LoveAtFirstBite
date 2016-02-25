@@ -1,15 +1,17 @@
-<h2>SiteName</h2>
-<h3>LOGIN</h3>
+<p class="text-center header-text-sm">LOGIN</h3>
 <%= form_for @user, url: "/sessions", method:"post" do |f| %>
   <div class="form-group"> 	
-  	<span>Email</span>
+  	<span class="instructional-text-md">Email</span>
   	<br>
     <%= f.text_field :email, required: true %>
   </div>
   <div class="form-group">
-  	<span>Password</span>
+  	<span class="instructional-text-md">Password</span>
   	<br>
     <%= f.password_field :password, required: true %>
   </div>
-  <%= f.submit "LOGIN" %>
+  <%= f.submit "Log In", class: "btn btn-primary btn-lg" %>
+  <br>
+  <br>
+  <p class="instructional-text-sm">New to SiteName? <a href="/users/new">Sign up here</a>.</p>
 <% end %> 
