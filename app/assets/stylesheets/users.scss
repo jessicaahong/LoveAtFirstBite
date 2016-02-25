@@ -4,6 +4,15 @@
 
 @import "partials/variables";
 
+.navbar-header {
+	position: relative;
+
+	#greeting {
+		margin-top: 15px;
+		position: absolute;
+	}
+}
+
 .header-text-sm {
 	font-size: 24px;
 }
