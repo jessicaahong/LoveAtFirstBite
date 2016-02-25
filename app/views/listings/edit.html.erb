@@ -8,7 +8,7 @@
   </div>
   <div class="form-group"> 
     <p class="instructional-text-medium">Produce Category</p>
-    <%= f.select :category, Listing.categories.keys.to_a, required: true %>
+    <%= f.select :produce_category, Listing.produce_categories, required: true %>
   <div class="form-group"> 	
   	<p class="instructional-text-medium">Quantity</p>
     <%= f.text_area :quantity, placeholder: "How much produce would you like to donate? ex. 7 pints of strawberries, one dozen bell peppers, 20lb case fingerling potatoes",required: true %>

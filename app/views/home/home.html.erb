@@ -1,11 +1,11 @@
 <div id="jumbo-image-div">
 	<div id="homepage-text">
-		<h1 id="jumbo-header">this is the home page sanity check!</h1>
-		<p id="jumbo-subheader">text goes here...</p>
+		<h1 class="jumbo-header"><b>Ugly Is Beautiful.</b></h1>
+		<p class="jumbo-subheader">text goes here...</p>
 		<% if current_user %>
-			<%= button_to "Browse Produce", "/listings/search", method: "get", class: "btn btn-default btn-lg" %>
+			<%= button_to "Browse Produce", "/listings/search", method: "get", class: "btn btn-default btn-lg", id: "lemon-button"%>
 		<% else %>
-			<%= button_to "Sign Up", "/users/new", method: "get", class: "btn btn-default btn-lg" %>
+			<%= button_to "Sign Up", "/users/new", method: "get", class: "btn btn-default btn-lg", id: "lemon-button" %>
 		<% end %>
 	</div>
 	<img src="/assets/uglylemon.png" id="jumbo-image">

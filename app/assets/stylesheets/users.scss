@@ -4,30 +4,49 @@
 
 @import "partials/variables";
 
+
+
+//Navbar CSS
+.navbar {
+	border: 0px;
+}
 .navbar-header {
 	position: relative;
-
+	.navbar-brand {
+		font-size: 20px;
+	}
 	#greeting {
-		margin-top: 15px;
-		position: absolute;
+		font-size: 16px;
+		font-style: normal;
+	}
+	.navbar-brand {
+		font-family: $main-font;
+		color: black;
+		&:hover {
+			color: black;
+		}
+	}
+	#transparent {
+		border-width: 0%;
+		-webkit-box-shadow: 0px 0px;
+		box-shadow: 0px 0px;
+		background-color: rgba(0,0,0,0);
 	}
 }
-
-.header-text-sm {
-	font-size: 24px;
+.navbar-nav {
+	font-family: $main-font;
+	&:hover {
+		color: black;
+	}
+}
+#transparent {
+	border-width: 0%;
+	-webkit-box-shadow: 0px 0px;
+	box-shadow: 0px 0px;
+	background-color: rgba(0,0,0,0);
 }
 
-.instructional-text-lg {
-	font-size: 18px;
-}
-
-.instructional-text-md {
-	font-size: 16px;
-}
-
-.instructional-text-sm {
-	font-size: 14px
-}
+//SignIn SignUp CSS
 
 .new_user {
 	margin: 0 auto;
@@ -38,19 +57,72 @@
 	#user_username {
 		height: 30px;
 		width: 340px;
-		border: 1px, solid;
 	}
 
 	#user_email {
-		color: $light_gray;
 		height: 30px;
 		width: 340px;
 	}
 
 	#user_password {
-		color: red;
 		height: 30px;
 		width: 340px;
 	}
+}
 
+//User Show Page CSS
+
+.user-profile {
+	position: relative;
+	width: 100%;
+
+	.profile-details {
+		position: relative;
+
+		.profile-pic {
+			margin: 15px;
+			float: left;
+		}
+		.profile-details-text {
+			margin: 15px;
+			float: left;
+		}
+		.left-button {
+			float: left;
+			padding: 10px;
+		}
+		.right-button {
+			float: left;
+			padding: 10px;
+		}
+	}
+
+	.listings-details {
+		clear: left;
+		margin-left: 15px;
+
+		.listing-details-text {
+			margin: 15px;
+			float: left;
+			clear: left;
+			width: 300px;
+		}
+		.listing-image {
+			margin: 15px;
+			float: left;
+		}	
+	}
+}
+
+//Edit User Form CSS
+#edit-profile-div {
+	position: relative;
+	margin-left: 20px;
+
+	
+
+	#delete-account-header {
+		font-family: $main-font;
+		font-size: 22px;
+	}
 }

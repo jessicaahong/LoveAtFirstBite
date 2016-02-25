@@ -1,28 +1,42 @@
-<div class="profile_details">
-	<div class="profile_pic"><%= image_tag(@user.avatar.url(:medium)) %></div>
-	<h2><%= @user.username %></h2>
-	<p class="profile-details-text"><%= @user.email %></p>
-	<% if current_user == @user %>
-		<%= button_to "Edit My Profile", edit_user_path(@user), method: "get" %>
-		<%= button_to "Manage My Listings", "/listings/mylistings", method: "get" %>
-	<% end %>
-</div>
+<div class="user-profile">
+	<div class="profile-details">
+		<div class="profile-pic">
+			<%= image_tag(@user.avatar.url(:medium)) %>
+		</div>
+		<div class="profile-details-text">
+			<h2 class="header-text-lg"><b>
+				<%= @user.username %></b>
+			</h2>
+			<p class="header-text-sm">
+				Email: <%= @user.email %>
+			</p>
+			<% if current_user == @user %>
+				<div class="left-button">
+					<%= button_to "Edit My Profile", edit_user_path(@user), method: "get", class: "btn btn-default button-pair" %>
+				</div>
+				<div class="right-button">
+					<%= button_to "Manage My Listings", "/listings/mylistings", method: "get", class: "btn btn-default button-pair"  %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+
 	<div class="listings-details">
 		<% if @user.listings.count > 0 %> 
-			<h3>View <%= @user.username %>'s listings:</h3>
+			<h3 class="header-text-md"><b>View <%= @user.username %>'s listings:</b></h3>
 			<% @user.listings.each do |listing| %>
-				<div class="listing-image">
-					<%= link_to image_tag(listing.avatar.url(:medium)), "/listings/#{listing.id}" %>
-				</div>
 			<div class="listing-details-text">
-				<h3><%= link_to listing.title, "/listings/#{listing.id}", class: "listing-details-text" %></h3>
-				<p class="listing-details-text">Listing created <%= listing.created_at %></p>
-				<p class="listing-details-text"><%= listing.quantity %></p>
-				<p class="listing-details-text"><%= listing.description %></p>
+				<h3 class="header-text-sm"><%= link_to listing.title, "/listings/#{listing.id}" %></h3>
+				<p class="instructional-text-sm">Listing created <%= listing.created_at %></p>
+				<p class="instructional-text-md">Quantity: <%= listing.quantity %></p>
+				<p class="instructional-text-md">Description: <%= listing.description %></p>
+			</div>
+			<div class="listing-image">
+				<%= link_to image_tag(listing.avatar.url(:medium)), "/listings/#{listing.id}" %>
 			</div>
 			<% end %>
 		<% else %>
-			<p class="listing-details-text"><%= @user.username %> doesn't have any listings yet!</p>
+			<h3><%= @user.username %> doesn't have any listings yet!</h3>
 		<% end %>
 	</div>
 </div>

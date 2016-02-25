@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160223232714) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.integer  "user_id"
-    t.string   "category"
+    t.string   "produce_category"
   end
 
   add_index "listings", ["user_id"], name: "index_listings_on_user_id", using: :btree

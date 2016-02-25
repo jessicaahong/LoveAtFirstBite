@@ -15,4 +15,5 @@ Rails.application.routes.draw do
 
   get "*path", to: "home#show", page: "home"
 
+  post "/listings/searchresults", to: "listings#searchresults"
 end

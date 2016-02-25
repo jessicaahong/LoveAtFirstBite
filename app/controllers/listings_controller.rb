@@ -47,20 +47,26 @@ before_action :require_login
 		redirect_to "/listings"
 	end
 
+# Listing.where(city: "San Francisco", produce_category: nil)
 	def search
-		@listings = Listing.all
+		@cities = Listing.uniq.pluck(:city)
+		@produce_categories = Listing.uniq.pluck(:produce_category)
+		@listing = Listing.new
 		render layout: "search_listings"
 	end
 
-	def search_query
-		@listings = Listing.find_by
-		send it back as json so i dont have to refresh page
-		format.json { render json @listings}
+	def searchresults
+		@
+		@results = Listing.where(city: :option_city, produce_category: :option_category)
+		render layout: "search_listings"
 	end
 
 private
 	def listing_params
-		params.require(:listing).permit(:category, :title, :quantity, :description, :address_line1, :address_line2, :city, :state, :zip, :phone, :prefers_phone, :prefers_email, :user_id, :avatar)
+		params.require(:listing).permit(:produce_category, :title, :quantity, :description, :address_line1, :address_line2, :city, :state, :zip, :phone, :prefers_phone, :prefers_email, :user_id, :avatar)
 	end
 
+	def query_params
+		params.require(:listings).permit(:option_city, :option_category)
+	end
 end

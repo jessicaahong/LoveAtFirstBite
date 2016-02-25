@@ -1,4 +1,5 @@
-<p class="text-center header-text-sm">LOGIN</h3>
+<div class="form-div">
+<h3 class="text-center header-text-sm">LOGIN</h3>
 <%= form_for @user, url: "/sessions", method:"post" do |f| %>
   <div class="form-group"> 	
   	<span class="instructional-text-md">Email</span>
@@ -15,3 +16,4 @@
   <br>
   <p class="instructional-text-sm">New to SiteName? <a href="/users/new">Sign up here</a>.</p>
 <% end %> 
+</div>

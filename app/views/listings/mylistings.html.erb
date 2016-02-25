@@ -1,17 +1,25 @@
-	<%= button_to "Add New Listing", "/listings/new", method: "get" %>
+<div id="mylistings-div">
+	<%= button_to "Add New Listing", "/listings/new", method: "get", class: "btn btn-primary", id:"add-listing-button"%>
+<br>
 
-<% @current_user.listings.each do |listing| %>
-	<div class="mylistings-listing-details">
-		<div class="mylistings-listing-image">
-			<%= image_tag(listing.avatar.url(:medium)) %>
-		</div>
+	<% @current_user.listings.each do |listing| %>
+		<div class="mylistings-listing-details">
+			<div class="mylistings-listing-pic">
+				<%= image_tag(listing.avatar.url(:medium)) %>
+			</div>
 
-		<div class="mylistings-listing-details-text-content">
-			<h3><%= link_to listing.title, "/listings/#{listing.id}", class: "listing-details-text" %></h3>
-			<p class="mylistings-listing-details-text">Listing created <%= listing.created_at %></p>
-			<p class="mylistings-listing-details-text"><%= listing.quantity %></p>
-			<p class="mylistings-listing-details-text"><%= listing.description %></p>
+			<div class="mylistings-listing-details-text">
+				<h3 class="header-text-md">
+					<%= link_to listing.title, "/listings/#{listing.id}", class: "listing-details-text" %>
+				</h3>
+				<p class="instructional-text-sm">Listing created <%= listing.created_at %></p>
+				<p class="instructional-text-md">Quantity: <%= listing.quantity %></p>
+				<p class="instructional-text-md">Description: <%= listing.description %></p>
+				<div class="mylistings-edit-buttons">
+					<%= button_to "Edit Listing", "/listings/#{listing.id}/edit", method: "get", class: "btn btn-default" %>
+				</div>
+			</div>
+
 		</div>
-	<%= button_to "Edit Listing", "/listings/#{listing.id}/edit", method: "get" %>
-	</div>
-<% end %>
+	<% end %>
+</div>

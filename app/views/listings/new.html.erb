@@ -1,60 +1,62 @@
-<h3>Create a new listing</h3>
+<div class="listing-form-div">
+<h3 class="header-text-md">Create a new listing</h3>
+<br>
 <%= form_for @listing do |f| %>
   <%= f.hidden_field :user_id, value: @current_user.id %>
-<p class="instructional-text-large">Listing Details</p>
   <div class="form-group">
-  	<p class="instructional-text-medium">Title</p>
+  	<div class="instructional-text-md">Title</div>
     <%= f.text_field :title, required: true %>
   </div>
   <div class="form-group"> 
-    <p class="instructional-text-medium">Produce Category</p>
-    <%= f.select :category, Listing.categories.keys.to_a, required: true %>
+    <div class="instructional-text-md">Produce Category</div>
+    <%= f.select :produce_category, Listing.produce_categories, required: true %>
   <div class="form-group"> 	
-  	<p class="instructional-text-medium">Quantity</p>
+  	<div class="instructional-text-md">Quantity</div>
     <%= f.text_area :quantity, placeholder: "How much produce would you like to donate? ex. 7 pints of strawberries, one dozen bell peppers, 20lb case fingerling potatoes",required: true %>
   </div>
   <div class="form-group">
-  	<p class="instructional-text-medium">Description (optional)</p>
+  	<div class="instructional-text-md">Description (optional)</div>
     <%= f.text_area :description, placeholder: "Include a brief description of produce donation here" %>
   </div>
   <div class="form-group">
-    <p class="instructional-text-medium">Upload a photo of your produce! (optional)</p>
+    <div class="instructional-text-md">Upload a photo of your produce! (optional)</div>
     <%= f.file_field :avatar %>
   </div>
-<p class="instructional-text-large">Pickup Details</p>
-<p class="instructional-text-medium">Let users know where they will be picking up!</p>
-<p class="instructional-text-medium" style="color: red"><i>City is required</i></p>
+<div class="instructional-text-large">Pickup Details</div>
+<div class="instructional-text-md">Let users know where they will be picking up!</div>
+<div class="instructional-text-md" style="color: red"><i>City is required</i></div>
   <div class="form-group">
-   	<p class="instructional-text-medium">Address</p>
+   	<div class="instructional-text-md">Address</div>
 	<%= f.text_field :address_line1 %>
   </div>
   <div class="form-group">
   <%= f.text_field :address_line2 %>
   </div>
   <div class="form-group">
-    <p class="instructional-text-medium">City</p>
+    <div class="instructional-text-md">City</div>
   <%= f.text_field :city, required: true %>
   </div>
   <div class="form-group">
-    <p class="instructional-text-medium">State</p>
+    <div class="instructional-text-md">State</div>
   <%= f.text_field :state %>
   </div>
   <div class="form-group">
-    <p class="instructional-text-medium">Zip Code</p>
+    <div class="instructional-text-md">Zip Code</div>
   <%= f.text_field :zip %>
   </div>
   <div class="form-group">
-    <p class="instructional-text-medium">Phone Number</p>
+    <div class="instructional-text-md">Phone Number</div>
   <%= f.text_field :phone %>
   </div>
-  <p class="instructional-text-medium">How do you want users to contact you?</p>
+  <div class="instructional-text-md">How do you want users to contact you?</div>
     <div class="form-group">
-    <span class="instructional-text-medium">Prefer Phone</span>
+    <span class="instructional-text-md">Prefer Phone</span>
   <%= f.check_box :prefers_phone %>
   </div>
     <div class="form-group">
-    <span class="instructional-text-medium">Prefer Email</span>
+    <span class="instructional-text-md">Prefer Email</span>
   <%= f.check_box :prefers_email %>
   </div>
   <%= f.submit "Create Listing" %>
 <% end %> 
+</div>

@@ -1,11 +1,15 @@
 <div class="sidebar">
 
-	<div class="sidebar-search-by-city">
-		<p class="instructional-text">Search by City</p>
-		
-	</div>
-	<div class="sidebar-search-by-category">	
-		<p class="instructional-text">Search by Category</p>
-		<%= select_tag "Category", options_from_collection_for_select(Listing.all, "id", "category") %>
-	</div>
+	<%= form_for(@listing, "/listings/searchresults", method: :get) do |f| %>
+		<div class="sidebar-search-by-city">
+			<p class="instructional-text">Search by City</p>
+			<%= select_tag "Cities", options_for_select(@cities.sort), selected: :option_city, include_blank: "All" %>
+		</div>
+		<br>
+		<div class="sidebar-search-by-produce-category">	
+			<p class="instructional-text">Search by Category</p>
+			<%= select_tag "Category", options_for_select(@produce_categories.sort), selected: :option_category, include_blank: "All"  %>
+		</div>
+	<%= f.submit "Search" %>
+	<% end %>
 </div>

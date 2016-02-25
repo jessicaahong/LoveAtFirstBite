@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" id="transparent">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
@@ -9,7 +9,7 @@
       </button>
 	<%= link_to "SiteName", "/", method: "get", class: "navbar-brand" %>
 	<% if @current_user%>
-		<span class="navbar-brand">Welcome, <%= @current_user.username %>
+		<span class="navbar-brand" id="greeting">Welcome, <%= @current_user.username %>
 		</span>
 	<% end %>
 	</div>

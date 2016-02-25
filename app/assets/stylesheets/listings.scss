@@ -2,3 +2,93 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "partials/variables";
+
+//Listing Show Page CSS
+
+.listing-showpage {
+	position: relative;
+	width: 100%;
+
+	#listing-showpage-buttons {
+		width: 100%;
+		margin: 0 auto;
+
+		.left-button {
+			float: left;
+			padding: 10px;
+		}
+		.right-button {
+			float: left;
+			padding: 10px;
+		}
+	}
+
+	.showpage-listing-details {
+		position: relative;
+		clear: left;
+
+		.showpage-listing-pic {
+			margin: 15px;
+			float: left;
+		}
+		.showpage-listing-details-text {
+			width: 400px;
+			margin: 15px;
+			float: left;
+		}
+	}
+
+	.listing-pickup-details {
+		position: relative;
+		clear: left;
+		margin-left: 15px;
+		margin-top: 15px;
+
+		.owner-details-text {
+			margin: 15px;
+			float: left;
+			width: 300px;
+		}
+		.owner-profile-pic {
+			margin: 15px;
+			float: left;
+		}	
+	}
+}
+
+//MyListings CSS
+
+#mylistings-div {
+	position: relative;
+	font-family: $main-font;
+
+
+	.mylistings-listing-details {
+		clear: left;
+
+		.mylistings-listing-pic {
+			float: left;
+			margin: 15px;
+		}
+
+		.mylistings-listing-details-text {
+			float: left;
+			margin: 15px;
+		}
+		.mylistings-edit-buttons {
+			clear: left;
+
+		}
+	}
+}
+
+
+//Listing Forms CSS
+
+.listing-form-div {
+	margin-left: 20px;
+	font-family: $main-font;
+
+	
+}

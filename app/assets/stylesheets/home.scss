@@ -4,13 +4,8 @@
 
 @import "partials/variables";
 
-h1 {
-	color: $light_gray;
-}
 
-.header-row-image {
-	width: 100%;
-}
+//Homepage CSS
 
 #jumbo-image-div {
 	position: relative;
@@ -32,20 +27,61 @@ h1 {
 		z-index: 2;
 		margin: 0 auto;
 
-		#jumbo-header {
-			color: black;
-			font-size: 50px;
-		}
-
-		#jumbo-subheader {
-			font-size: 35px;
-		}
 		&:hover + #jumbo-image {
-    	-webkit-filter: grayscale(0%); 
-    	filter: grayscale(0%);
+    	-webkit-filter: saturate(150%); 
+    	filter: saturate(150%);
 		}
 	}
+}
 
+#lemon-button {
+	opacity: 0.6;
 
+	&:hover {
+		opacity: 0.9;
+	}
+}
 
+//About and FAQ CSS
+
+#about-page-div {
+	margin: 40px 30px;
+
+	#about-blurbs-ul {
+		list-style: none;
+
+		.food-fact {
+			margin: 9px 0px;
+		}
+	}
+}
+
+.bottom-row-image {
+	width: 100%;
+	margin: 0 auto;
+}
+
+#faq-page-div{
+	margin: 40px 30px;
+
+	#faq-ul{
+		list-style: none;
+
+		.faq-question {
+			font-weight: bold;
+			margin-top: 10px;
+		}
+		.faq-answer {
+			margin-left: 30px;
+
+			#faq-links-ul {
+				list-style: none;
+
+				.faq-link {
+					color: black;
+					margin: -40px;
+				}
+			}
+		}
+	}
 }
