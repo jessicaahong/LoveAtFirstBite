@@ -1,1 +1,4 @@
-<h1>sanity check: this is where we search for fruit</h1>
+<% @listings.each do |listing| %>
+	<%= listing.title %>
+	<br>
+<% end %>

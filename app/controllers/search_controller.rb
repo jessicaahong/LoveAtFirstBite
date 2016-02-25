@@ -3,6 +3,10 @@ class SearchController < ApplicationController
 # Listing.where(city: "San Francisco", produce_category: nil)
 	def index
 		search_term = {}
+		if params[:Cities].nil? || params[:Category].nil?
+			params[:Cities] = ""
+			params[:Category] = ""
+		end
 		search_term[:city] = params[:Cities] unless params[:Cities].empty?
 		search_term[:produce_category] = params[:Category] unless params[:Category].empty?
 		@listings = Listing.where(search_term)
@@ -11,10 +15,15 @@ class SearchController < ApplicationController
 		render layout: "search_listings"
 	end
 
-# 	def show
-# 		@results = Listing.where(city: :option_city, produce_category: :option_category)
-# 		render layout: "search_listings"
-# 	end
+	# def show
+	# 	search_term = {}
+	# 	search_term[:city] = params[:Cities] unless params[:Cities].empty?
+	# 	search_term[:produce_category] = params[:Category] unless params[:Category].empty?
+	# 	@listings = Listing.where(search_term)
+	# 	@cities = Listing.uniq.pluck(:city)
+	# 	@produce_categories = Listing.uniq.pluck(:produce_category)
+	# 	render layout: "search_listings"
+	# end
 
 # 	def searchresults
 # 		@results = Listing.where(city: :option_city, produce_category: :option_category)

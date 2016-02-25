@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   post "/listings/searchresults", to: "listings#searchresults"
 
   get "/search", to: "search#index"
-  get "/show", to: "search#show"
+  get "/search/show", to: "search#show"
 
   get "*path", to: "home#show", page: "home"
 
