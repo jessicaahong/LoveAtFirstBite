@@ -18,7 +18,10 @@ a {
 		background-color: $lemon;
 	}
 }
-
+.listing-image:hover {
+    -webkit-filter: saturate(120%); 
+    filter: saturate(120%);
+}
 .listing-showpage {
 	position: relative;
 	width: 100%;

@@ -3,6 +3,7 @@
 	<%= button_to "Add New Listing", "/listings/new", method: "get", class: "btn btn-default", id:"add-listing-button"%>
 <br>
 </div>
+<br>
 <div class="all-of-mylistings-div col-md-offset-2 col-md-10">
 	<% @current_user.listings.each do |listing| %>
 		<div class="mylistings-listing-details">

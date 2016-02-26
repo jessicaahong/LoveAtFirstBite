@@ -8,8 +8,8 @@
 		<h3 class="header-text-md"><%= @listing.title %></h3>
 		<p class="instructional-text-sm">Listing created <%= time_ago_in_words(@listing.created_at.in_time_zone('Eastern Time (US & Canada)')) %> ago</p>
 		<p class="instructional-text-md">Quantity: <%= @listing.quantity %></p>
-		<p class="instructional-text-md">Description: <%= @listing.description %><br>
-		Category: <%= @listing.produce_category %></p>
+		<p class="instructional-text-md">Category: <%= @listing.produce_category %><br>Description: <%= @listing.description %><br>
+		</p>
 	</div>
 </div>
 <div class="listing-pickup-details">

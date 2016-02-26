@@ -10,11 +10,12 @@
 }
 
 .sidebar {
-	padding-bottom: 100%;
-	margin-bottom: -100%;
+	position: fixed;
 	text-align: center;
 	font-family: $main-font;
 	border-right: 1px gray solid;
+	height: 100%;
+	width: 310px;
 
 	.sidebar-search-by-city {
 		margin-top: 200px;	
@@ -25,11 +26,10 @@
 
 			option {
 				font-style: $main-font;
-				font-size: 16px;
+				font-size: 20px;
 			}
 		}
 	}
-
 
 	.sidebar-search-by-produce-category {
 		select {
@@ -42,11 +42,15 @@
 }
 
 .search-results-div {
+	margin-left: 350px;
+	position: relative;
+	width: 1000px;
 
 	.search-result-header {
 		text-align: center;
 		position: relative; 
 		margin-top: 50px;
+
 
 		#no-results {
 			height: 300px;
@@ -63,23 +67,32 @@
 			float: left;
 			clear: left;
 			margin-bottom: 20px;
+			width: 300px;
 		}
 		.search-result-text {
 			float:left;
 			margin-left: 20px;
+			max-width: 360px;
 		}
 	}
 }
 
 
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   	.sidebar {
 	  	background-color: white;
 	  	border: none;
+	  	position: static;
+	  	margin: 0 auto;
 
 	  	.sidebar-search-by-city {
 	  		margin-top: 20px;
 	  	}
+	}
+	.search-results-div {
+		margin-left: 0px;
+		margin: 0 auto;
+	
 	}
 }

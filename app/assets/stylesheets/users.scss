@@ -23,8 +23,11 @@
 		font-family: $main-font;
 		color: black;
 		&:hover {
-			color: black;
+			color: $lemon;
 		}
+	}
+	#greeting:hover {
+		color: black;
 	}
 	#transparent {
 		border-width: 0%;
@@ -73,6 +76,9 @@
 		height: 30px;
 		width: 340px;
 	}
+}
+.signup-link {
+	color: $lemon;
 }
 
 //User Show Page CSS
@@ -142,12 +148,14 @@
 		#user_username {
 		height: 30px;
 		width: 340px;
-	}
+		}
 	
-
-	#user_email {
-		height: 30px;
-		width: 340px;
+		#user_email {
+			height: 30px;
+			width: 340px;
+		}
 	}
+	a:hover {
+		color: $lemon;
 	}
 }

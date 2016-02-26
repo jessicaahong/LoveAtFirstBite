@@ -19,18 +19,17 @@
 <br>
 
 <% if (@listings.count > 0) %>
-	<% @listings.each do |listing| %>
+	<% @listings.order('listings.created_at DESC').each do |listing| %>
 		<div class="search-result-div">
 			<div class="search-result-pic">
-				<%= link_to image_tag(listing.avatar.url(:medium)), "/listings/#{listing.id}" %>
+				<%= link_to image_tag(listing.avatar.url(:medium)), "/listings/#{listing.id}", class: "listing-image"%>
 			</div>
 			<div class="search-result-text">
 				<h3 class="header-text-md"><%= link_to listing.title, "/listings/#{listing.id}" %></h3>
 				<p class="instructional-text-md">Owner: <%= listing.user.username %><br>
-				<span class="instructional-text-sm">Listing created <%= listing.created_at %></span></p>
-				<p class="instructional-text-md">Quantity: <%= listing.quantity %><br>
-				Description: <%= listing.description %><br>
-				Category: <%= listing.produce_category %></p>
+				<span class="instructional-text-sm">Listing created <%= time_ago_in_words(listing.created_at.in_time_zone('Eastern Time (US & Canada)')) %> ago</span></p>
+				<p class="instructional-text-md">Category: <%= listing.produce_category %><br>Quantity: <%= listing.quantity %><br>
+				Description: <%= listing.description %></p>
 			</div>
 		</div>
 		<br>

@@ -32,7 +32,7 @@
 				<p class="instructional-text-md">Description: <%= listing.description %></p>
 			</div>
 			<div class="listing-image">
-				<%= link_to image_tag(listing.avatar.url(:medium)), "/listings/#{listing.id}" %>
+				<%= link_to image_tag(listing.avatar.url(:medium)), "/listings/#{listing.id}", class: "listing-image" %>
 			</div>
 			<% end %>
 		<% else %>
