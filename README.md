@@ -35,7 +35,7 @@ SiteName aims to connect people looking for fresh produce with grocery stores lo
 <ul>
 <li>Technologies used include HTML5/CSS3, <a href="http://jquery.com/">jQuery</a>, Sass-Rails 5.0, Ruby 2.2.0, Rails 4.2.5.1, Paperclip 4.3.5 and PostgreSQL 9.5.0.</li>
 <li>Lots of cool photos sourced from <a href="http://uliwestphal.de/overview.html">artist Uli Westphal</a>.</li>
-<li>Project planning with help from <a href="https://trello.com/b/TQUPx8Tq/to-do-browsergame">Trello</a>.</li>
+<li>Project planning with help from <a href="https://trello.com/">Trello</a>.</li>
 </ul>
 ### Installation ###
 
