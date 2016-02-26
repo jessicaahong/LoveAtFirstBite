@@ -130,6 +130,9 @@
 	}
 	#delete-profile-button {
 		margin-left: 10px;
+		&:hover {
+			background-color: #D9534F;
+		}
 	}
 
 	.edit_user {
