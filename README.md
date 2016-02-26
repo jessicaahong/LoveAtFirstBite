@@ -22,15 +22,21 @@ SiteName aims to connect people looking for fresh produce with grocery stores lo
 <br>
 <img src="/wireframes/user_profile_page.png">
 <br>
-
+### User Stories ###
+<ul>
+<li>As a small business owner, I want to source free, fresh produce so I can make organic baby food and sell it at the Noe Valley farmers market.</li>
+<li>As a large grocery chain, I want to outsource waste management services so I can cut costs.</li>
+<li>As a company, I want to engage in environmentally conscious practices so I can give back to the community and generate positive publicity.</li>
+<li>As an entitled millennial, I want to Instagram pictures of mutant fruit so I can impress my friends.</li>
+</ul>
 
 ### Technologies Used ###
 
-Technologies used include HTML5/CSS3, <a href="http://jquery.com/">jQuery</a>, Sass-Rails 5.0, Ruby 2.2.0, Rails 4.2.5.1, Paperclip 4.3.5 and PostgreSQL 9.5.0.
-<br>Lots of cool photos sourced from <a href="http://uliwestphal.de/overview.html">artist Uli Westphal</a>.
-<br>
-Project planning with help from <a href="https://trello.com/b/TQUPx8Tq/to-do-browsergame">Trello</a>.
-
+<ul>
+<li>Technologies used include HTML5/CSS3, <a href="http://jquery.com/">jQuery</a>, Sass-Rails 5.0, Ruby 2.2.0, Rails 4.2.5.1, Paperclip 4.3.5 and PostgreSQL 9.5.0.</li>
+<li>Lots of cool photos sourced from <a href="http://uliwestphal.de/overview.html">artist Uli Westphal</a>.</li>
+<li>Project planning with help from <a href="https://trello.com/b/TQUPx8Tq/to-do-browsergame">Trello</a>.</li>
+</ul>
 ### Installation ###
 
 Some day I will actually get around to deploying this! Until then, fork and clone a copy of this repo on your local machine and use a local server to it get up and running.
