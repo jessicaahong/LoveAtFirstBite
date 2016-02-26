@@ -3,10 +3,12 @@
 # Overview
 
 ##Did you know##
-*While 1 in 6 people in America face hunger...
-*__20% of the produce grown in the U.S. is rejected from grocery stores because it has a funny shape or size.__
+<ul>
+<li>While 1 in 6 people in America face hunger...</li>
+<li><b>20% of the produce grown in the U.S. is rejected from grocery stores because it has a funny shape or size.</b></li>
+</ul>
 <br>
-**SiteName** aims to connect people looking for fresh produce with grocery stores looking to cut waste management costs. Users can sign up, browse available produce by city and produce category, and create their own produce listings.
+<b>SiteName<b> aims to connect people looking for fresh produce with grocery stores looking to cut waste management costs. Users can sign up, browse available produce by city and produce category, and create their own produce listings.
 <br>
 
 #Development
