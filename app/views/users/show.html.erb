@@ -1,4 +1,4 @@
-<div class="user-profile">
+<div class="user-profile col-md-8 col-md-offset-2">
 	<div class="profile-details">
 		<div class="profile-pic">
 			<%= image_tag(@user.avatar.url(:medium)) %>
@@ -27,7 +27,7 @@
 			<% @user.listings.each do |listing| %>
 			<div class="listing-details-text">
 				<h3 class="header-text-sm"><%= link_to listing.title, "/listings/#{listing.id}" %></h3>
-				<p class="instructional-text-sm">Listing created <%= listing.created_at %></p>
+				<p class="instructional-text-sm">Listing created <%= time_ago_in_words(listing.created_at.in_time_zone('Eastern Time (US & Canada)')) %> ago</p>
 				<p class="instructional-text-md">Quantity: <%= listing.quantity %></p>
 				<p class="instructional-text-md">Description: <%= listing.description %></p>
 			</div>

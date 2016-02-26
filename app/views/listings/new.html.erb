@@ -1,30 +1,36 @@
 <div class="listing-form-div">
-<h3 class="header-text-md">Create a new listing</h3>
+<span class="header-text-md">Create a new listing</span>
+<br>
+<div class="instructional-text-sm" style="color: red"><i>* field is required</i></div>
 <br>
 <%= form_for @listing do |f| %>
   <%= f.hidden_field :user_id, value: @current_user.id %>
   <div class="form-group">
-  	<div class="instructional-text-md">Title</div>
+  	<div class="instructional-text-md">Title<span class="instructional-text-sm" style="color: red">*</span></div>
     <%= f.text_field :title, required: true %>
   </div>
   <div class="form-group"> 
-    <div class="instructional-text-md">Produce Category</div>
+    <span class="instructional-text-md">Produce Category<span class="instructional-text-sm" style="color: red">*</span></span>
     <%= f.select :produce_category, Listing.produce_categories, required: true %>
+  <br>
+  <br>
   <div class="form-group"> 	
-  	<div class="instructional-text-md">Quantity</div>
+  	<div class="instructional-text-md">Quantity<span class="instructional-text-sm" style="color: red">*</span></div>
     <%= f.text_area :quantity, placeholder: "How much produce would you like to donate? ex. 7 pints of strawberries, one dozen bell peppers, 20lb case fingerling potatoes",required: true %>
   </div>
   <div class="form-group">
-  	<div class="instructional-text-md">Description (optional)</div>
+  	<div class="instructional-text-md">Description</div>
     <%= f.text_area :description, placeholder: "Include a brief description of produce donation here" %>
   </div>
   <div class="form-group">
     <div class="instructional-text-md">Upload a photo of your produce! (optional)</div>
+    <br>
     <%= f.file_field :avatar %>
+    <br>
   </div>
-<div class="instructional-text-large">Pickup Details</div>
+<div class="header-text-sm">Pickup Details</div>
 <div class="instructional-text-md">Let users know where they will be picking up!</div>
-<div class="instructional-text-md" style="color: red"><i>City is required</i></div>
+<br>
   <div class="form-group">
    	<div class="instructional-text-md">Address</div>
 	<%= f.text_field :address_line1 %>
@@ -33,7 +39,7 @@
   <%= f.text_field :address_line2 %>
   </div>
   <div class="form-group">
-    <div class="instructional-text-md">City</div>
+    <div class="instructional-text-md">City<span class="instructional-text-sm" style="color: red">*</span></div>
   <%= f.text_field :city, required: true %>
   </div>
   <div class="form-group">
@@ -49,6 +55,7 @@
   <%= f.text_field :phone %>
   </div>
   <div class="instructional-text-md">How do you want users to contact you?</div>
+  <br>
     <div class="form-group">
     <span class="instructional-text-md">Prefer Phone</span>
   <%= f.check_box :prefers_phone %>
@@ -57,6 +64,6 @@
     <span class="instructional-text-md">Prefer Email</span>
   <%= f.check_box :prefers_email %>
   </div>
-  <%= f.submit "Create Listing" %>
+  <%= f.submit "Create Listing", class: "btn btn-default", id:"create-listing-button" %>
 <% end %> 
 </div>

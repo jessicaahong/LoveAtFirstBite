@@ -6,6 +6,19 @@
 
 //Listing Show Page CSS
 
+a {
+	color: black;
+	&:hover {
+		color: $lemon;
+	}
+}
+
+.btn {
+	&:hover {
+		background-color: $lemon;
+	}
+}
+
 .listing-showpage {
 	position: relative;
 	width: 100%;
@@ -27,6 +40,7 @@
 	.showpage-listing-details {
 		position: relative;
 		clear: left;
+		margin-top: 30px;
 
 		.showpage-listing-pic {
 			margin: 15px;
@@ -61,8 +75,20 @@
 
 #mylistings-div {
 	position: relative;
+	width: 100%;
 	font-family: $main-font;
 
+	#button-div{
+		text-align: center;
+
+		#add-listing-button {
+			width: 300px;
+		}
+	}
+
+	.all-of-mylistings-div {
+		padding-left: 30px;
+	}
 
 	.mylistings-listing-details {
 		clear: left;
@@ -78,17 +104,113 @@
 		}
 		.mylistings-edit-buttons {
 			clear: left;
-
 		}
 	}
 }
 
 
-//Listing Forms CSS
+//Edit and New Listing Forms CSS
 
 .listing-form-div {
-	margin-left: 20px;
+	position: relative;
+	margin-left: 40px;
 	font-family: $main-font;
 
-	
+
+	.new_listing {
+
+		#listing_title {
+			width: 400px;
+		}
+		#listing_produce_category {
+			border: none;
+		}
+		#listing_quantity {
+			width: 400px;
+			height: 80px;
+			font-family: $main-font;
+		}
+		#listing_description {
+			width: 400px;
+			height: 80px;
+			font-family: $main-font;		
+		}
+		#listing_address_line1 {
+			width: 400px;
+		}
+		#listing_address_line2 {
+			width: 400px;
+		}
+		#listing_city {
+			width: 400px;
+		}
+		#listing_state {
+			width: 400px;
+		}
+		#listing_zip {
+			width: 400px;
+		}
+		#listing_phone {
+			width: 400px;
+		}
+	}
+	#create-listing-button {
+		width: 300px;
+		margin: 0 auto;
+	}
+
+}
+
+.listing-form-div {
+	position: relative;
+	margin-left: 40px;
+	font-family: $main-font;
+
+
+	.edit_listing {
+
+		#listing_title {
+			width: 400px;
+		}
+		#listing_produce_category {
+			border: none;
+		}
+		#listing_quantity {
+			width: 400px;
+			height: 80px;
+			font-family: $main-font;
+		}
+		#listing_description {
+			width: 400px;
+			height: 80px;
+			font-family: $main-font;		
+		}
+		#listing_address_line1 {
+			width: 400px;
+		}
+		#listing_address_line2 {
+			width: 400px;
+		}
+		#listing_city {
+			width: 400px;
+		}
+		#listing_state {
+			width: 400px;
+		}
+		#listing_zip {
+			width: 400px;
+		}
+		#listing_phone {
+			width: 400px;
+		}
+
+		#edit-listing-button {
+			width: 300px;
+		}
+	}
+
+	#delete-listing-button {
+		width: 300px;
+	}
+
 }

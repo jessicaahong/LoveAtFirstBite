@@ -1,16 +1,15 @@
-<div class="sidebar">
-
+<div class="sidebar col-md-4">
 	  <%= form_tag(search_path, :method => "get") do %>
-
 		<div class="sidebar-search-by-city">
-			<p class="instructional-text">Search by City</p>
-			<%= select_tag "Cities", options_for_select(@cities.sort), selected: :option_city, include_blank: "All" %>
+			<p class="instructional-text-lg">Search by City</p>
+			<%= select_tag "Cities", options_for_select(@cities.sort), include_blank: "All" %>
 		</div>
 		<br>
 		<div class="sidebar-search-by-produce-category">	
-			<p class="instructional-text">Search by Category</p>
-			<%= select_tag "Category", options_for_select(@produce_categories.sort), selected: :option_category, include_blank: "All"  %>
+			<p class="instructional-text-lg">Search by Category</p>
+			<%= select_tag "Category", options_for_select(@produce_categories.sort), include_blank: "All"  %>
 		</div>
+		<br>
 	<%= button_to "Search", "/search/show", method: "get", class: "btn btn-default" %>
 	<% end %>
 </div>

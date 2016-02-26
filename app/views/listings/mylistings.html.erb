@@ -1,7 +1,9 @@
 <div id="mylistings-div">
-	<%= button_to "Add New Listing", "/listings/new", method: "get", class: "btn btn-primary", id:"add-listing-button"%>
+<div id="button-div">
+	<%= button_to "Add New Listing", "/listings/new", method: "get", class: "btn btn-default", id:"add-listing-button"%>
 <br>
-
+</div>
+<div class="all-of-mylistings-div col-md-offset-2 col-md-10">
 	<% @current_user.listings.each do |listing| %>
 		<div class="mylistings-listing-details">
 			<div class="mylistings-listing-pic">
@@ -12,7 +14,7 @@
 				<h3 class="header-text-md">
 					<%= link_to listing.title, "/listings/#{listing.id}", class: "listing-details-text" %>
 				</h3>
-				<p class="instructional-text-sm">Listing created <%= listing.created_at %></p>
+				<p class="instructional-text-sm">Listing created <%= time_ago_in_words(listing.created_at.in_time_zone('Eastern Time (US & Canada)')) %> ago</p>
 				<p class="instructional-text-md">Quantity: <%= listing.quantity %></p>
 				<p class="instructional-text-md">Description: <%= listing.description %></p>
 				<div class="mylistings-edit-buttons">

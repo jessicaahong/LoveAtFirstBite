@@ -25,6 +25,6 @@
   <br>
   <h3 id="delete-account-header">Click to delete your account</h3>
   <p class="instructional-text-md" style="color: red">Warning! Clicking this button will permanently erase your profile and all of your listings.</p>
-  <%= button_to "Delete", "/users/#{@user.id}", method: :delete, data: {confirm: 'Are you sure you want to delete your account?', disable_with: "loading..."}, class: "btn btn-danger" %>
+  <%= button_to "Delete", "/users/#{@user.id}", method: :delete, data: {confirm: 'Are you sure you want to delete your account?', disable_with: "loading..."}, class: "btn btn-danger", id:"delete-profile-button" %>
 <% end %>
 </div>

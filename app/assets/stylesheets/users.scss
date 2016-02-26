@@ -38,6 +38,11 @@
 	&:hover {
 		color: black;
 	}
+	li a {
+		&:hover {
+		background-color: $lemon;
+	}
+	}
 }
 #transparent {
 	border-width: 0%;
@@ -105,7 +110,7 @@
 			margin: 15px;
 			float: left;
 			clear: left;
-			width: 300px;
+
 		}
 		.listing-image {
 			margin: 15px;
@@ -119,10 +124,27 @@
 	position: relative;
 	margin-left: 20px;
 
-	
-
 	#delete-account-header {
 		font-family: $main-font;
 		font-size: 22px;
+	}
+	#delete-profile-button {
+		margin-left: 10px;
+	}
+
+	.edit_user {
+		width: 400px;
+		padding: 10px;
+
+		#user_username {
+		height: 30px;
+		width: 340px;
+	}
+	
+
+	#user_email {
+		height: 30px;
+		width: 340px;
+	}
 	}
 }

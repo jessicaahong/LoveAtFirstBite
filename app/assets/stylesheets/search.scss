@@ -1,0 +1,85 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+@import "partials/variables";
+
+.container {
+	position: relative;
+}
+
+.sidebar {
+	padding-bottom: 100%;
+	margin-bottom: -100%;
+	text-align: center;
+	font-family: $main-font;
+	border-right: 1px gray solid;
+
+	.sidebar-search-by-city {
+		margin-top: 200px;	
+
+		select {
+			font: $main-font;
+			border: 0;
+
+			option {
+				font-style: $main-font;
+				font-size: 16px;
+			}
+		}
+	}
+
+
+	.sidebar-search-by-produce-category {
+		select {
+			font: $main-font;
+			border: 0;
+		}
+	}
+
+
+}
+
+.search-results-div {
+
+	.search-result-header {
+		text-align: center;
+		position: relative; 
+		margin-top: 50px;
+
+		#no-results {
+			height: 300px;
+			margin-top: 20px;
+		}
+	}
+	.search-result-div	{
+		margin-left: 20px;
+		text-align: middle;
+		position: relative;
+		vertical-align: middle;
+
+		.search-result-pic {
+			float: left;
+			clear: left;
+			margin-bottom: 20px;
+		}
+		.search-result-text {
+			float:left;
+			margin-left: 20px;
+		}
+	}
+}
+
+
+
+@media (max-width: 992px) {
+  	.sidebar {
+	  	background-color: white;
+	  	border: none;
+
+	  	.sidebar-search-by-city {
+	  		margin-top: 20px;
+	  	}
+	}
+}

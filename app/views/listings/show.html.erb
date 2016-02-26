@@ -1,22 +1,4 @@
-<div class="listing-showpage">
-
-<div id="listing-showpage-buttons">
-	<% if @current_user == @listing.user %>
-		<div class="left-button">
-			<%= button_to "Edit Listing", "/listings/#{@listing.id}/edit", method: "get", class: "btn btn-default" %>
-		</div>
-		<div class="right-button">
-			<%= button_to "Delete Listing", "/listings", method: "delete", class: "btn btn-default" %>
-		</div>
-	<% else %>
-		<div class="left-button">
-			<%= button_to "Email Owner", "#", class: "btn btn-default"%>
-		</div>
-		<div class="right-button">
-			<%= button_to "See Owner's Other Listings", "/users/#{@listing.user.id.to_s}", method: "get", class: "btn btn-default" %>
-		</div>
-	<% end %>
-</div>
+<div class="listing-showpage col-md-8 col-md-offset-2">
 
 <div class="showpage-listing-details">
 	<div class="showpage-listing-pic">
@@ -24,7 +6,7 @@
 	</div>
 	<div class="showpage-listing-details-text">
 		<h3 class="header-text-md"><%= @listing.title %></h3>
-		<p class="instructional-text-sm">Listing created <%= @listing.created_at %></p>
+		<p class="instructional-text-sm">Listing created <%= time_ago_in_words(@listing.created_at.in_time_zone('Eastern Time (US & Canada)')) %> ago</p>
 		<p class="instructional-text-md">Quantity: <%= @listing.quantity %></p>
 		<p class="instructional-text-md">Description: <%= @listing.description %><br>
 		Category: <%= @listing.produce_category %></p>
@@ -50,6 +32,23 @@
 				<%= @listing.phone %>
 			<% end %>
 		</p>
+		<div id="listing-showpage-buttons">
+	<% if @current_user == @listing.user %>
+		<div class="left-button">
+			<%= button_to "Edit Listing", "/listings/#{@listing.id}/edit", method: "get", class: "btn btn-default" %>
+		</div>
+		<div class="right-button">
+			<%= button_to "Delete Listing", "/listings", method: "delete", class: "btn btn-default" %>
+		</div>
+	<% else %>
+		<div class="left-button">
+			<%= button_to "Email Owner", "#", class: "btn btn-default"%>
+		</div>
+		<div class="right-button">
+			<%= button_to "See Owner's Other Listings", "/users/#{@listing.user.id.to_s}", method: "get", class: "btn btn-default" %>
+		</div>
+	<% end %>
+</div>
 	</div>
 	<div class="owner-profile-pic">
 		<%= image_tag(@listing.user.avatar.url(:medium)) %>

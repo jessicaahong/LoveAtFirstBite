@@ -38,14 +38,15 @@
 	opacity: 0.6;
 
 	&:hover {
-		opacity: 0.9;
+		opacity: 0.8;
+		background-color: white;
 	}
 }
 
 //About and FAQ CSS
 
 #about-page-div {
-	margin: 40px 30px;
+	margin: 25px 30px;
 
 	#about-blurbs-ul {
 		list-style: none;
@@ -78,7 +79,6 @@
 				list-style: none;
 
 				.faq-link {
-					color: black;
 					margin: -40px;
 				}
 			}

@@ -1,4 +1,39 @@
-<% @listings.each do |listing| %>
-	<%= listing.title %>
-	<br>
+<div class="search-results-div col-md-8">
+<div class="search-result-header">
+<% if (params[:Cities] == "") && (params[:Category] == "") && (@listings.count > 0) %>
+	<h2 class="header-text-lg">View all produce listings</h2>
+<% elsif (params[:Cities] != "") && (params[:Category] == "") && (@listings.count > 1) %> 
+	<h2 class="header-text-lg">There are currently <%= @listings.count %> produce listings available in <%= params[:Cities] %></h2>
+<% elsif (params[:Cities] != "") && (params[:Category] == "") && (@listings.count == 1) %> 
+	<h2 class="header-text-lg">There is currently 1 produce listing available in <%= params[:Cities] %></h2>
+<% elsif (params[:Cities] == "") && (params[:Category] != "") && (@listings.count > 1) %> 
+	<h2 class="header-text-lg">There are currently <%= @listings.count %> listings posted for <%= params[:Category].downcase %></h2>
+<% elsif (params[:Cities] == "") && (params[:Category] != "") && (@listings.count == 1) %> 
+	<h2 class="header-text-lg">There is currently 1 listing posted for <%= params[:Category].downcase %></h2>
+<% elsif (params[:Cities] != "") && (params[:Category] != "") && (@listings.count == 0) %>
+	<h2 class="header-text-lg">There are currently 0 listings for <%= params[:Category].downcase %> in <%= params[:Cities] %></h2>
+	<img src="/assets/carrothug.png" id="no-results">
 <% end %>
+</div>
+<br>
+<br>
+
+<% if (@listings.count > 0) %>
+	<% @listings.each do |listing| %>
+		<div class="search-result-div">
+			<div class="search-result-pic">
+				<%= link_to image_tag(listing.avatar.url(:medium)), "/listings/#{listing.id}" %>
+			</div>
+			<div class="search-result-text">
+				<h3 class="header-text-md"><%= link_to listing.title, "/listings/#{listing.id}" %></h3>
+				<p class="instructional-text-md">Owner: <%= listing.user.username %><br>
+				<span class="instructional-text-sm">Listing created <%= listing.created_at %></span></p>
+				<p class="instructional-text-md">Quantity: <%= listing.quantity %><br>
+				Description: <%= listing.description %><br>
+				Category: <%= listing.produce_category %></p>
+			</div>
+		</div>
+		<br>
+	<% end %>
+<% end %>
+</div>
