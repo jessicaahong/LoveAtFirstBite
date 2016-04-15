@@ -1,8 +1,6 @@
-# SiteName #
+# Love At First Bite #
 
-# Overview #
-
-##Did you know##
+##Did you know?##
 While 1 in 6 people in America face hunger...<br>
 20% of the produce grown in the U.S. is rejected from grocery stores because it has a funny shape or size.<br>
 <br>
