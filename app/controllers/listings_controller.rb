@@ -44,7 +44,7 @@ before_action :require_login
 	def destroy
 		listing = Listing.find(params[:id])
 		listing.destroy
-		redirect_to "/listings"
+		redirect_to "/users/#{@current_user.id}"
 	end
 
 

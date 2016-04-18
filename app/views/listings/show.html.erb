@@ -38,7 +38,7 @@
 			<%= button_to "Edit Listing", "/listings/#{@listing.id}/edit", method: "get", class: "btn btn-default" %>
 		</div>
 		<div class="right-button">
-			<%= button_to "Delete Listing", "/listings", method: "delete", class: "btn btn-default" %>
+			<%= button_to "Delete Listing", "/listings/#{@listing.id}", method: "delete", class: "btn btn-default" %>
 		</div>
 	<% else %>
 		<div class="left-button">
