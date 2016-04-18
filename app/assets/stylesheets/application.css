@@ -13,5 +13,5 @@
  *= require_tree .
  *= require_self
  */
-@import "partials/*"
-@import url(https://fonts.googleapis.com/css?family=Archivo+Narrow);
+@import "partials/*";
+/*@import url(https://fonts.googleapis.com/css?family=Archivo+Narrow);*/
