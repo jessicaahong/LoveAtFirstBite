@@ -41,9 +41,9 @@
 			<%= button_to "Delete Listing", "/listings/#{@listing.id}", method: "delete", class: "btn btn-default" %>
 		</div>
 	<% else %>
-		<div class="left-button">
+<!-- 		<div class="left-button">
 			<%= button_to "Email Owner", "#", class: "btn btn-default"%>
-		</div>
+		</div> -->
 		<div class="right-button">
 			<%= button_to "See Owner's Other Listings", "/users/#{@listing.user.id.to_s}", method: "get", class: "btn btn-default" %>
 		</div>
